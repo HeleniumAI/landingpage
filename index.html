@@ -27,6 +27,77 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+
+    <script type="text/javascript">
+      (function (f, b) {
+        if (!b.__SV) {
+          var e, g, i, h;
+          window.mixpanel = b;
+          b._i = [];
+          b.init = function (e, f, c) {
+            function g(a, d) {
+              var b = d.split(".");
+              2 == b.length && ((a = a[b[0]]), (d = b[1]));
+              a[d] = function () {
+                a.push([d].concat(Array.prototype.slice.call(arguments, 0)));
+              };
+            }
+            var a = b;
+            "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel");
+            a.people = a.people || [];
+            a.toString = function (a) {
+              var d = "mixpanel";
+              "mixpanel" !== c && (d += "." + c);
+              a || (d += " (stub)");
+              return d;
+            };
+            a.people.toString = function () {
+              return a.toString(1) + ".people (stub)";
+            };
+            i =
+              "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(
+                " "
+              );
+            for (h = 0; h < i.length; h++) g(a, i[h]);
+            var j = "set set_once union unset remove delete".split(" ");
+            a.get_group = function () {
+              function b(c) {
+                d[c] = function () {
+                  call2_args = arguments;
+                  call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+                  a.push([e, call2]);
+                };
+              }
+              for (
+                var d = {},
+                  e = ["get_group"].concat(
+                    Array.prototype.slice.call(arguments, 0)
+                  ),
+                  c = 0;
+                c < j.length;
+                c++
+              )
+                b(j[c]);
+              return d;
+            };
+            b._i.push([e, f, c]);
+          };
+          b.__SV = 1.2;
+          e = f.createElement("script");
+          e.type = "text/javascript";
+          e.async = !0;
+          e.src =
+            "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL
+              ? MIXPANEL_CUSTOM_LIB_URL
+              : "file:" === f.location.protocol &&
+                "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)
+              ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
+              : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+          g = f.getElementsByTagName("script")[0];
+          g.parentNode.insertBefore(e, g);
+        }
+      })(document, window.mixpanel || []);
+    </script>
   </head>
 
   <body>
@@ -50,17 +121,23 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="https://twitter.com/heleniumai" class="nav-link"
+              <a
+                href="https://twitter.com/heleniumai"
+                target="_blank"
+                class="nav-link twitter"
                 ><i class="fa-brands fa-x-twitter"></i
               ></a>
             </li>
             <li class="nav-item">
-              <a href="https://discord.com/invite/tsPvZ44K" class="nav-link"
+              <a
+                href="https://discord.com/invite/tsPvZ44K"
+                target="_blank"
+                class="nav-link discord"
                 ><i class="fa-brands fa-discord"></i
               ></a>
             </li>
             <li class="nav-item">
-              <a href="mailto:heleniumai@protonmail.com" class="nav-link"
+              <a href="mailto:heleniumai@protonmail.com" class="nav-link email"
                 ><i class="fa-regular fa-envelope"></i
               ></a>
             </li>
@@ -70,26 +147,26 @@
     </nav>
 
     <div class="container-sm text-center">
-      <div class="row align-items-center" style="min-height: 40vh">
+      <div class="row align-items-center" style="min-height: 55vh">
         <div class="col-12">
-          <h2 class="mb-5">
+          <h1 class="mb-5">
             We're building at the intersection of<br />
             <span class="color1">Web 3</span>, <span class="color1">AI</span>,
             and
             <!-- <span class="color2">Decentralized Physical Infrastructure</span> -->
             <span class="color1">DePIn</span>
-          </h2>
+          </h1>
           <h3>
-            A generative AI Tool-suite and Ecosystem with <span class="color1">creator</span> & <span class="color1">host</span>
-            rewards<br />
+            Whether you're a <span class="color1">content creator</span>, a
+            <span class="color1">model trainer</span> or a
+            <span class="color1">gamer</span>,<br />
+            you'll love what we're cooking
+            <!-- Helenium AI is for <br /><span class="wordrotator">Content creators</span> -->
             <!-- <span class="wordrotator">Building</span> <br /> -->
           </h3>
         </div>
       </div>
-      <div
-        class="row justify-content-center align-items-center"
-        style="min-height: 40vh"
-      >
+      <div class="row justify-content-center" style="min-height: 25vh">
         <div class="col-md-4 col-lg-3 col-xs-8">
           <form
             id="waitlistform"
@@ -131,7 +208,7 @@
               >
             </div>
             <button type="submit" class="btn btn-outline-light" style="">
-              Join our wailist
+              Join the wailist
             </button>
           </form>
           <div
@@ -145,7 +222,10 @@
               We'll get in touch soon.
               <br />
               Until then, why don't you join our growing community on
-              <a href="https://discord.com/invite/tsPvZ44K" target="_blank"
+              <a
+                class="discord"
+                href="https://discord.com/invite/tsPvZ44K"
+                target="_blank"
                 >discord</a
               >
             </p>
@@ -165,16 +245,26 @@
 
         <!-- Right -->
         <div>
-          <a href="https://twitter.com/heleniumai" class="me-4 text-reset">
+          <a
+            href="https://twitter.com/heleniumai"
+            target="_blank"
+            class="me-4 text-reset twitter"
+          >
             <i class="fa-brands fa-x-twitter"></i>
           </a>
-          <a href="https://discord.com/invite/tsPvZ44K" class="me-4 text-reset">
+          <a
+            href="https://discord.com/invite/tsPvZ44K"
+            target="_blank"
+            class="me-4 text-reset discord"
+          >
             <i class="fa-brands fa-discord"></i>
           </a>
           <!-- <a href="https://github.com/HeleniumAI" class="me-4 text-reset">
             <i class="fa-brands fa-github"></i>
           </a> -->
-          <a href="mailto:heleniumai@protonmail.com" class="me-4 text-reset"
+          <a
+            href="mailto:heleniumai@protonmail.com"
+            class="me-4 text-reset email"
             ><i class="fa-regular fa-envelope"></i
           ></a>
         </div>
@@ -202,14 +292,50 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script type="module">
+      // import mixpanel from "/mixpanel-browser";
+
+      mixpanel.init("841668634823ff7cc4ce56ffdc4ed95a", {
+        track_pageview: true,
+        persistence: "localStorage",
+      });
+
+      mixpanel.track_links("a.discord", "Click discord link", {
+        referrer: document.referrer,
+      });
+      mixpanel.track_links("a.twitter", "Click twitter link", {
+        referrer: document.referrer,
+      });
+      mixpanel.track_links("a.email", "Click email link", {
+        referrer: document.referrer,
+      });
+    </script>
+    <script>
+      // Custom email validation using regex
+      const emailInput = document.getElementById("emailInput");
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+      emailInput.addEventListener("input", function () {
+        if (emailRegex.test(this.value)) {
+          this.setCustomValidity("");
+        } else {
+          this.setCustomValidity("Please enter a valid email address yoyoyo");
+        }
+      });
+    </script>
     <script>
       $(function () {
         count = 0;
-        wordsArray = ["Creating", "Imagining", "Building", "Delivering"];
+        wordsArray = [
+          "Model Trainers",
+          "Gamers",
+          "Everyone",
+          "Content Creators",
+        ];
         setInterval(function () {
           count++;
           $(".wordrotator").text(wordsArray[count % wordsArray.length]);
-        }, 2000);
+        }, 1500);
       });
 
       $(function () {
@@ -222,6 +348,7 @@
             "waitlistedconfirmation"
           );
           waitlistconfirm.classList.remove("d-none");
+          mixpanel.track("Waitlist joined");
         }
       });
 
